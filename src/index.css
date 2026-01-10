@@ -30,9 +30,9 @@ body {
 }
 
 .btn-search {
-  background-color: #1ba94c;
+  background-color: #338d99;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgb(27 169 76 / 50%);
+  box-shadow: 0 4px 12px rgba(98, 149, 224, 0.5);
   font-size: 18.005px;
   padding-left: 1.528em;
   padding-right: 1.528em;
@@ -41,12 +41,15 @@ body {
   min-height: 2.778em;
   border: none;
   cursor: pointer;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
 }
 
 .btn-search:hover {
-  background-color: #ffffff;
-  border: 1px solid #1ba94c;
-  color: #1ba94c;
+  background-color: #000000;
+  border: 1px solid #338d99;
+  color: #338d99;
+  transition: all 0.3s ease;
 }
 
 .characters {

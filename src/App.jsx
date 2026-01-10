@@ -5,7 +5,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   const reqApi = async () => {
-    console.log("Buscando personajes...")
+    const api = await fetch('https://rickandmortyapi.com/api/character')
+    const characters = await api.json()
+    console.log(characters)
   }
 
   return (
@@ -13,7 +15,7 @@ function App() {
       <header className="App-header">
         <h1 className='title'>Rick & Morty</h1>
         <img src="img/rickmorty.png" alt='Rick & Morty' className='img-home'/>
-        <button onClick={reqApi} className='btn-search'>Buscar Personajes</button>
+        <button onClick={reqApi} className='btn-search'>Lista de Personajes</button>
       </header>
     </div>
   )
