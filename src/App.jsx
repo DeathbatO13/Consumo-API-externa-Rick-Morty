@@ -2,12 +2,13 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [characters, setCharacters] = useState(null)
 
   const reqApi = async () => {
     const api = await fetch('https://rickandmortyapi.com/api/character')
     const characters = await api.json()
-    console.log(characters)
+    setCharacters(characters.results)
   }
 
   return (
