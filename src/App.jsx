@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Character from './components/Character'
 
 function App() {
 
@@ -15,8 +16,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className='title'>Rick & Morty</h1>
-        <img src="img/rickmorty.png" alt='Rick & Morty' className='img-home'/>
-        <button onClick={reqApi} className='btn-search'>Lista de Personajes</button>
+        {characters ? (
+          <Character characters={characters}/>
+        ) : (
+          <>
+            <img src="img/rickmorty.png" alt='Rick & Morty' className='img-home'/>
+            <button onClick={reqApi} className='btn-search'>Lista de Personajes</button>
+          </>
+        )}
       </header>
     </div>
   )
