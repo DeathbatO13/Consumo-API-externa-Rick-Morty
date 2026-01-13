@@ -1,8 +1,6 @@
-import React from 'react'
-
 export default function Character(props) {
 
-  const {character, setCharacters} = props;
+  const { characters, setCharacters } = props;
 
   const resetCharacters = () => {
     setCharacters(null);
@@ -12,25 +10,32 @@ export default function Character(props) {
     <div className='characters'> 
       <h1>Personajes</h1>
       <span className='back-home' onClick={resetCharacters}>Volver</span>
+
       <div className='container-characters'>
         {characters.map((character, index) => (
           <div className='character-container' key={index}>
             <div>
-              <img src={character.image} alt={character.name} className='img-character'/>
+              <img
+                src={character.image}
+                alt={character.name}
+                className='img-character'
+              />
             </div>
+
             <div>
               <h3>{character.name}</h3>
               <h6>
                 {character.status === 'Alive' ? (
                   <>
-                    <span className='alive'/> Vivo
+                    <span className='alive' /> Vivo
                   </>
-                ):(
+                ) : (
                   <>
-                    <span className='dead'/> Muerto
+                    <span className='dead' /> Muerto
                   </>
                 )}
               </h6>
+
               <p>
                 <span className='text-grey'>Episodios:</span>
                 <span>{character.episode.length}</span>
@@ -47,6 +52,7 @@ export default function Character(props) {
           </div>
         ))}
       </div>
+
       <span className='back-home' onClick={resetCharacters}>Volver</span>
     </div>
   )
